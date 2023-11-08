@@ -1,0 +1,368 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'actor', sans-serif;
+    
+}
+.header{
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(251, 252, 249, 0.7),rgba(18, 19, 17, 0.7)),url(images/13.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative; 
+}
+nav{
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo{
+    height: 100px;
+    width: 100px;
+    /* transform: rotate(0deg); */
+    animation: spin 6s infinite linear;
+}
+/* for animating the logo component*/
+@keyframes spin{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+/* @keyframes point{
+    from{
+        transform: scaleX(1);
+    }
+    to{
+        transform: scaleX(-1);
+    }
+} */
+/* for animating the logo component*/
+
+}
+.nav-links{
+   flex: 1;
+    text-align: right;
+
+}
+
+.nav-links ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 8px 20px;
+    position: relative;
+    
+
+}
+
+.nav-links ul li a{
+    color: rgb(19, 18, 16);
+    text-decoration: none;
+    font-size:20px ;
+
+}
+
+
+
+/* for animating the nav components*/
+.nav-links ul li::after{
+    content: '';
+    height: 3px;
+    width: 0%;
+    background: #0e1111;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+    
+}
+.nav-links ul li:hover::after{
+    width: 80%;
+    font-size: 30px;
+}
+/* for animating the nav components*/
+.text-box{
+    width: 90%;
+    color: oldlace;
+    /*for positioning the text box in the center*/
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+     /*for positioning the text box in the center*/
+}
+.text-box h1{
+    font-size: 40px;
+    
+}
+ /*for zooming the text in center*/
+ h1:hover span{
+    
+    font-size: 1.5em;
+    transition: font-size 0.3s;
+    color: cornsilk;
+}
+h1 span{
+    display: inline-block;
+    transition: font-size0.3s;    
+}
+
+ h1::before{
+    content: '';
+}
+ /*for zooming the text in center*/
+ p{
+     margin-top: 15px;
+ }
+
+.hero-btn{
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    border: 1px solid beige;
+    padding: 5px 24px;
+    font-size: 19px;
+    margin-top: 10px;
+    background: transparent;
+}
+
+.hero-btn:hover{
+    border: 1px solid #f44336;
+    background: #f44336 ;
+    transition: 1s;
+    color: whitesmoke;
+}
+nav .fa{
+    display: none;
+
+}
+
+
+@media(max-width: 700px){
+    .text-box h1{
+        font-size: 20px;}
+        .nav-links ul li{
+            display: block;
+        }
+        .nav-links{
+            position: absolute;
+            height: 50vh;
+            width: 200px;
+            top: 0;
+            
+            text-align: left;
+            right: -200px;
+            z-index: 1;
+            background:red;
+            transition: 1s;
+            
+        }
+
+            nav .fa{
+                display: block;
+                color: #fff;
+                margin: 10px;
+                font-size: 22px;
+               
+                cursor: pointer;
+            
+            }
+            .nav-links ul{
+                padding: 30px;
+            }
+        
+}
+
+.course{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding: 50px;
+}
+.course h1{
+    font-size: 36px;
+    font-weight: 600;
+}
+.course p{
+    font-size: 19px;
+    font-weight: 300;
+    line-height: 22px;
+    padding: 5px;
+
+}
+.row{
+    margin: 5%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.course-col{
+    flex-basis: 31%;
+    background: #f0dede;
+    border-radius: 10px;
+    margin-bottom: 1%;
+    padding: 10px 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    box-sizing: border-box;
+}
+h3{
+    text-align: center;
+    font-weight: 600;
+    margin: 5px 0;
+}
+.course-col:hover{
+    box-shadow: 0 0 20px 0px rgba(19, 0, 0, 0.938);
+}
+
+@media(max-width: 600px)
+{
+    .row{
+         flex-direction: column;
+        }
+}
+/*  camups*/
+.campus{
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    
+}
+
+
+.campus-col{
+    flex-basis: 32%;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+    }
+
+.campus-col img{
+    width: 100%;
+    height: 350px;
+    border-radius: 10px;
+}
+
+.layer{
+    background: transparent;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: 0.5s;
+}
+.layer:hover{
+    background: rgba(240, 92, 92, 0.7);
+}
+.layer h3{
+    width: 100%;
+    font-weight: 500;
+    color: whitesmoke;
+    font-size: 26px;
+    
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%);
+    position: absolute;
+    opacity: 0;
+    transition: 0.5s;
+}
+ 
+.layer:hover h3{
+    bottom: 49%;
+    opacity: 1;
+}
+/* facilities*/
+.facilities{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+ 
+}
+.facilities-col{
+    flex-basis: 32%;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+    text-align: left;
+    }
+
+    .facilities-col img{
+        width: 100%;
+        height: 350px;
+        border-radius: 10px;
+    }
+
+.testimonials{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    
+}
+.testimonials-col{
+        display: flex;
+          flex-basis: 44%;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    text-align: left;
+    background: #fff3f3;
+    padding: 25px;
+
+}
+.testimonials-col img{
+    height: 40px;
+    margin-left: 5px;
+    margin-right: 30px;
+    border-radius: 50%;
+}
+
+.testimonials-col  p{
+    padding: 0;
+}
+
+.testimonials-col  h3{
+    margin-top: 15px;
+    text-align: left;
+}
+.fa{
+    color: orangered;}
+
+
+    .cta{
+        margin: 100px auto;
+        width: 80%;
+        background-image: linear-gradient(rgba(251, 252, 249, 0.7),rgba(18, 19, 17, 0.7)),url(images/15.jpg);
+        background-position: center;
+        background-size: cover;
+        border-radius: 10px;
+        text-align: center;
+        padding: 70px;
+    }
+.cta h1{
+    color: wheat;
+    
+}
+
+.footer{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding: 20px;
+    background: rgba(196, 196, 196, 0.979);
+}
+
+.icons .fa{
+    color: red;
+    margin: 0 13px;
+    cursor: pointer;
+    padding: 18px 0;
+ }
